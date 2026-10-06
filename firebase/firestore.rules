@@ -1,0 +1,8 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // The app uses authenticated callable functions. Direct client access is denied.
+    // Admin SDK operations must validate roles and membership in functions/src/index.ts.
+    match /{document=**} { allow read, write: if false; }
+  }
+}

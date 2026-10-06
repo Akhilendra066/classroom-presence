@@ -1,0 +1,114 @@
+[
+  {
+    "name": "strong",
+    "wifi": [
+      -55,
+      -60,
+      -58,
+      -62
+    ],
+    "ble": [
+      -60,
+      -63,
+      -65,
+      -61
+    ],
+    "expected": "INSIDE"
+  },
+  {
+    "name": "weak",
+    "wifi": [
+      -90,
+      -90,
+      -90,
+      -90
+    ],
+    "ble": [
+      -95,
+      -95,
+      -95,
+      -95
+    ],
+    "expected": "OUTSIDE"
+  },
+  {
+    "name": "missing",
+    "wifi": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "ble": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "expected": "INSUFFICIENT_DATA"
+  },
+  {
+    "name": "one_missing",
+    "wifi": [
+      -55,
+      -60,
+      -58,
+      null
+    ],
+    "ble": [
+      -60,
+      -63,
+      -65,
+      null
+    ],
+    "expected": "INSIDE"
+  },
+  {
+    "name": "conflict",
+    "wifi": [
+      -55,
+      -55,
+      -55,
+      -55
+    ],
+    "ble": [
+      -95,
+      -95,
+      -95,
+      -95
+    ],
+    "expected": "UNCERTAIN"
+  },
+  {
+    "name": "imbalance",
+    "wifi": [
+      -30,
+      -60,
+      -65,
+      -90
+    ],
+    "ble": [
+      -30,
+      -65,
+      -65,
+      -95
+    ],
+    "expected": "UNCERTAIN"
+  },
+  {
+    "name": "boundary",
+    "wifi": [
+      -77,
+      -77,
+      -77,
+      -77
+    ],
+    "ble": [
+      -80,
+      -80,
+      -80,
+      -80
+    ],
+    "expected": "UNCERTAIN"
+  }
+]

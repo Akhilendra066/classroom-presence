@@ -1,0 +1,30 @@
+{
+  "protocolVersion": 1,
+  "manufacturerId": 65535,
+  "serviceUuid": "0000ca01-0000-1000-8000-00805f9b34fb",
+  "manufacturerPayload": "CP1|<roomId>|<number>",
+  "companyIdStrippedByAndroid": true,
+  "roomId": "ROOM_A101",
+  "beacons": [
+    {
+      "espId": "CLASSROOM_ESP_1",
+      "number": 1,
+      "wifiSsid": "CP_ROOM_A101_ESP_1"
+    },
+    {
+      "espId": "CLASSROOM_ESP_2",
+      "number": 2,
+      "wifiSsid": "CP_ROOM_A101_ESP_2"
+    },
+    {
+      "espId": "CLASSROOM_ESP_3",
+      "number": 3,
+      "wifiSsid": "CP_ROOM_A101_ESP_3"
+    },
+    {
+      "espId": "CLASSROOM_ESP_4",
+      "number": 4,
+      "wifiSsid": "CP_ROOM_A101_ESP_4"
+    }
+  ]
+}

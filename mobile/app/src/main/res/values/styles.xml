@@ -1,0 +1,4 @@
+<resources><style name="Theme.ClassroomPresence" parent="android:style/Theme.Material.Light.NoActionBar">
+    <item name="android:fontFamily">sans</item><item name="android:windowLightStatusBar">true</item>
+    <item name="android:colorAccent">#166B5A</item><item name="android:windowBackground">#F5F7F5</item>
+</style></resources>

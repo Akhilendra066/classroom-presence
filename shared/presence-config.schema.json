@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PresenceConfig v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "calibrated",
+    "wifiInsideDbm",
+    "bleInsideDbm",
+    "wifiOutsideDbm",
+    "bleOutsideDbm",
+    "minDetected",
+    "minStrong",
+    "minWeak",
+    "maxSpreadDb",
+    "maxAgeMs",
+    "bleDurationMs",
+    "intervalMs",
+    "totalSlots",
+    "minValid",
+    "insidePercent"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "default": 1,
+      "minimum": 1,
+      "maximum": 2147483647
+    },
+    "calibrated": {
+      "type": "boolean",
+      "default": false
+    },
+    "wifiInsideDbm": {
+      "type": "integer",
+      "default": -72,
+      "minimum": -127,
+      "maximum": -1
+    },
+    "bleInsideDbm": {
+      "type": "integer",
+      "default": -75,
+      "minimum": -127,
+      "maximum": -1
+    },
+    "wifiOutsideDbm": {
+      "type": "integer",
+      "default": -82,
+      "minimum": -127,
+      "maximum": -1
+    },
+    "bleOutsideDbm": {
+      "type": "integer",
+      "default": -85,
+      "minimum": -127,
+      "maximum": -1
+    },
+    "minDetected": {
+      "type": "integer",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 4
+    },
+    "minStrong": {
+      "type": "integer",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 4
+    },
+    "minWeak": {
+      "type": "integer",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 4
+    },
+    "maxSpreadDb": {
+      "type": "integer",
+      "default": 30,
+      "minimum": 1,
+      "maximum": 100
+    },
+    "maxAgeMs": {
+      "type": "integer",
+      "default": 35000,
+      "minimum": 1000,
+      "maximum": 60000
+    },
+    "bleDurationMs": {
+      "type": "integer",
+      "default": 25000,
+      "minimum": 1000,
+      "maximum": 30000
+    },
+    "intervalMs": {
+      "type": "integer",
+      "default": 300000,
+      "minimum": 1001,
+      "maximum": 600000
+    },
+    "totalSlots": {
+      "type": "integer",
+      "default": 12,
+      "minimum": 1,
+      "maximum": 40
+    },
+    "minValid": {
+      "type": "integer",
+      "default": 8,
+      "minimum": 1,
+      "maximum": 40
+    },
+    "insidePercent": {
+      "type": "integer",
+      "default": 60,
+      "minimum": 1,
+      "maximum": 100
+    },
+    "minInsideSlots": {
+      "type": "integer",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 40,
+      "description": "Absolute inside-checkpoint requirement. Zero or omitted retains legacy percentage attendance."
+    }
+  },
+  "$comment": "Cross-field constraints: outside < inside; minStrong/minWeak >= minDetected; minValid and minInsideSlots <= totalSlots; intervalMs > bleDurationMs. Enforced by Kotlin and PostgreSQL. New timed classes use max(5, ceil(durationMinutes / 3)) evenly spaced checkpoints and a teacher-selected absolute inside minimum; old sessions retain their original percentage policy."
+}

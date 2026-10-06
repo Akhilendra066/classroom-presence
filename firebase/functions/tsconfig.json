@@ -1,0 +1,1 @@
+{"compilerOptions":{"module":"commonjs","target":"ES2022","strict":true,"esModuleInterop":true,"outDir":"lib","sourceMap":true,"skipLibCheck":true},"include":["src/**/*.ts"]}
